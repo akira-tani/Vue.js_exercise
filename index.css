@@ -1,0 +1,52 @@
+
+.tab-menu {
+  display: flex;
+  margin-bottom: 10px;
+}
+.tab-menu li {
+  text-align: center;
+  padding: 10px;
+  cursor: pointer;
+  list-style: none;
+  width: 100px;
+  border: 1px solid #000;
+}
+.active {
+  background: black;
+  color: white;
+}
+.tab-content__item {
+  font-size: 20px;
+}
+
+/* --modal-- */
+.modal__content{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100vw;
+  height:100vh;
+  background-color:rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal__content--inner{
+  width:30%;
+  padding: 50px;
+  background:white;
+  text-align: center;
+}
+.modal__content--inner p{
+  padding-bottom:20px;
+}
+
+/* --search-- */
+.box {
+  border: 1px solid green;
+  border-radius: 3px;
+  margin-bottom: 3px;
+}
+td {
+  padding-bottom: 3px;
+}

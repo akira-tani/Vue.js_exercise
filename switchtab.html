@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>switchtab</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="index.css" />
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+  <div class="tab">
+    <ul class="tab-menu">
+      <li v-on:click="isSelect('option1')" v-bind:class="{'active': isActive === 'option1'}">タブ1</li>
+      <li v-on:click="isSelect('option2')" v-bind:class="{'active': isActive === 'option2'}">タブ2</li>
+      <li v-on:click="isSelect('option3')" v-bind:class="{'active': isActive === 'option3'}">タブ3</li>
+    </ul>
+    <div class="tab-content">
+      <div v-if="isActive === 'option1'">コンテンツ1</div>
+      <div v-else-if="isActive === 'option2'">コンテンツ2</div>
+      <div v-else-if="isActive === 'option3'">コンテンツ3</div>
+    </div>
+  </div>
+  <script>
+    const vm =new Vue({
+      el: '.tab',
+      data: {
+        isActive: 'option1'
+      },
+      methods: {
+        isSelect: function(option) {
+          this.isActive = option
+        }
+      }
+    })
+  </script>
+</body>
+</html>

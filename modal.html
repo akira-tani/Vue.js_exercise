@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>modal</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="index.css" />
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+
+<body>
+  <div class="modal">
+    <button v-on:click="openWindow">開く</button>
+    <div class="modal__content" v-show="showWindow">
+      <div class="modal__content--inner">
+        <p>モーダルウィンドウ</p>
+        <button v-on:click="closeWindow">閉じる</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    const vm = new Vue({
+      el: '.modal',
+      data: {
+        showWindow: false
+      },
+      methods: {
+        openWindow: function () {
+          this.showWindow = true
+        },
+        closeWindow: function() {
+          this.showWindow = false
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
