@@ -14,10 +14,10 @@
 <body>
   <div class="modal">
     <button v-on:click="openWindow">開く</button>
-    <div class="modal__content" v-show="showWindow">
-      <div class="modal__content--inner">
+    <div class="modal__content" v-show="showWindow"  v-on:click="closeWindow">
+      <div class="modal__content--inner"  v-on:click.stop="openWindow">
         <p>モーダルウィンドウ</p>
-        <button v-on:click="closeWindow">閉じる</button>
+        <button v-on:click.stop="closeWindow">閉じる</button>
       </div>
     </div>
   </div>
@@ -33,7 +33,7 @@
         },
         closeWindow: function() {
           this.showWindow = false
-        }
+        },
       }
     })
   </script>
